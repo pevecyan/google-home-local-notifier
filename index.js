@@ -1,5 +1,6 @@
 const express = require('express');
 const googleHome = require('google-home-notifier');
+const exec = require('child_process').exec;
 
 const config = require('./config');
 
@@ -8,6 +9,11 @@ const app = express();
 const googleHomeIp = "192.168.0.103";
 googleHome.ip(googleHomeIp, 'us');
 
+exec('./assh', (err,out,outerr)=>{
+    console.log(err);
+    console.log(out);
+    console.log(outerr);
+})
 
 app.get('/health',(req,res)=>{
     res.send('OK');
