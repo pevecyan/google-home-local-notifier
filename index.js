@@ -3,6 +3,7 @@ const googleHome = require('google-home-notifier');
 const exec = require('child_process').exec;
 
 const config = require('./config');
+const vacuum = require('./vacuum');
 
 const app = express();
 
@@ -14,6 +15,8 @@ exec('./assh', (err,out,outerr)=>{
     console.log(out);
     console.log(outerr);
 })
+
+app.use('/vacuum', vacuum);
 
 app.get('/health',(req,res)=>{
     res.send('OK');

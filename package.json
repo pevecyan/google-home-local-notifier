@@ -18,6 +18,7 @@
   "homepage": "https://github.com/pevecyan/google-home-local-notifier#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "google-home-notifier": "github:pevecyan/google-home-notifier#master"
+    "google-home-notifier": "github:pevecyan/google-home-notifier#master",
+    "miio": "^0.14.0"
   }
 }
