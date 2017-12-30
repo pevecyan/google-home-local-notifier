@@ -4,6 +4,7 @@ const exec = require('child_process').exec;
 
 const config = require('./config');
 const vacuum = require('./vacuum');
+const sonoff = require('./sonoff');
 
 const app = express();
 
@@ -17,6 +18,7 @@ exec('./assh', (err,out,outerr)=>{
 })
 
 app.use('/vacuum', vacuum);
+app.use('/sonoff', sonoff);
 
 app.get('/health',(req,res)=>{
     res.send('OK');
